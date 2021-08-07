@@ -43,15 +43,16 @@ class Job(models.Model):
 
 
 
-
     def __str__(self):
         return self.title
 
- 
+
+
+
 
 class Applicant(models.Model):
 
-    image = User.image
+    # image = models.ForeignKey(User, related_name='Applicant', null=True, blank=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)

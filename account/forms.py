@@ -17,6 +17,7 @@ class EmployeeRegistrationForm(UserCreationForm):
         self.fields['password2'].label = "Confirm Password :"
         self.fields['email'].label = "Email :"
         self.fields['gender'].label = "Gender :"
+        
 
         self.fields['first_name'].widget.attrs.update(
             {
@@ -54,7 +55,7 @@ class EmployeeRegistrationForm(UserCreationForm):
                   'password1', 
                   'password2', 
                   'gender',
-                  'image',
+                  'profile_image',
                   "cv"
                   ]
 
@@ -116,7 +117,7 @@ class EmployerRegistrationForm(UserCreationForm):
                   'email', 
                   'password1', 
                   'password2',
-                  'image'
+                  'profile_image'
                   ]
 
 
@@ -161,6 +162,7 @@ class UserLoginForm(forms.Form):
 
 
 
+
 class EmployeeProfileEditForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -178,4 +180,12 @@ class EmployeeProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "gender", "image", "cv",]
+        fields = ["first_name", 
+                "last_name", 
+                "gender", 
+                "profile_image", 
+                 "cv",
+                ]
+
+
+

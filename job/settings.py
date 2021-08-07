@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'taggit',
     'user_visit',
+    'test1',
    
 ]
 

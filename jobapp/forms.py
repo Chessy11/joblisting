@@ -76,7 +76,7 @@ class JobForm(forms.ModelForm):
             "company_name",
             "company_description",
             "url",
-            "header_image"
+            # "header_image"
             ]
 
     def clean_job_type(self):

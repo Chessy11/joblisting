@@ -22,8 +22,8 @@ class User(AbstractUser):
                               })
     role = models.CharField(choices=ROLE,  max_length=10)
     gender = models.CharField(choices=JOB_TYPE, max_length=1)
-    image = models.ImageField(null=True, blank=True, upload_to="images/")
-    cv = models.FileField(null=True, blank=True, upload_to="filefolder/")
+    profile_image = models.ImageField(null=True, blank=True, upload_to="media/images")
+    cv = models.FileField(null=True, blank=True, upload_to="media/cv")
 
 
     USERNAME_FIELD = "email"
@@ -35,3 +35,10 @@ class User(AbstractUser):
     def get_full_name(self):
         return self.first_name+ ' ' + self.last_name
     objects = CustomUserManager()
+
+
+
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+
